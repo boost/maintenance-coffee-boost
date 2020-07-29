@@ -1,0 +1,30 @@
+inherit_gem:
+  boost-styles:
+    - rubocop_default.yml
+
+AllCops:
+  TargetRubyVersion: 2.7.1
+  Exclude:
+    - config/**/*
+    - db/**/*
+    - bin/**/*
+    - vendor/bundle/**/*
+    - node_modules/**/*
+
+RSpec/ExpectActual:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
