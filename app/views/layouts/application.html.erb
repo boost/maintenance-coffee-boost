@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorChallenge</title>
+    <title>Boost Coffee</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+
+    <div class="callout large">
+      <div class="row column text-center">
+        <h1>Boost.</h1>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

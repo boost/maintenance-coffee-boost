@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Initial Setup
+* `rbenv install $(cat .ruby-version)`
+* `bundle install`
+* `yarn install --check-files`
+* `rails db:migrate`
+
+## Running
+* `rails server`
