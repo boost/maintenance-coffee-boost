@@ -3,6 +3,15 @@
   src: url('ProximaNova-Regular.otf');
 }
 
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url('ProximaNova-Bold.otf');
+}
+
 body {
-  font-family: ProximaNova,sans-serif;
+  font-family: ProximaNova, sans-serif;
+}
+
+.h1, .h2, .h3, .h4 {
+  font-family: ProximaNova-Bold, sans-serif;
 }
