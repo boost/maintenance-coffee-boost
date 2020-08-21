@@ -14,14 +14,20 @@
 
     <div class="grid-container">
       <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
+        <div class="callout success">
+          <p><%= notice %></p>
+        </div>
       <% end %>
       <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
+        <div class="callout alert">
+          <p><%= alert %></p>
+        </div>
       <% end %>
+
       <%- if controller_name != 'sessions' %>
         <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
       <% end %>
+
       <%= yield %>
     </div>
 

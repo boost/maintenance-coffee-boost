@@ -1,0 +1,33 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div class="callout alert">
+      <h4><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h4>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <fieldset class="fieldset">
+    <%= form.fields_for :order_items do |order_item_form| %>
+      <%= order_item_form.label :person_name %>
+      <%= order_item_form.text_field :person_name %>
+      <%= order_item_form.label :drink_name %>
+      <%= order_item_form.text_field :drink_name %>
+    <% end %>
+  </fieldset>
+
+  <div class="input-group">
+    <div class="input-group-button">
+      <%= form.submit class: 'button' %>
+    </div>
+  </div>
+<% end %>
