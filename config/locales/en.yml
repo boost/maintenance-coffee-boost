@@ -30,4 +30,11 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  activerecord:
+    attributes:
+      order:
+        name: Meeting/Client name
+      order_item:
+        person_name: Name
+        drink_name: Drink

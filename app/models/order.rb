@@ -3,5 +3,6 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :order_items
 
-  validates :name, uniqueness: true
+  validates :name, presence: true
+  validates :name, uniqueness: true, if: ->(o) { o.name.present? }
 end

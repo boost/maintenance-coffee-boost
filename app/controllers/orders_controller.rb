@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.save
-      redirect_to root_path, notice: 'Order was successfully created.'
+      redirect_to orders_path, notice: 'Order was successfully created.'
     else
       render :new
     end
