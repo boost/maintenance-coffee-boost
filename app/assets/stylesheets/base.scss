@@ -1,17 +1,26 @@
-@font-face {
-  font-family: 'ProximaNova';
-  src: url('ProximaNova-Regular.otf');
+@import 'variables';
+
+body.page {
+  .h2, h2 {
+    color: $blue;
+
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  background-color: $grey;
 }
 
-@font-face {
-  font-family: 'ProximaNova-Bold';
-  src: url('ProximaNova-Bold.otf');
+.button, button {
+  border-radius: $border-radius;
+  margin-bottom: 0rem; // Reset
+  font-size: 1em;
+
+  &.pink {
+    background: $pink;
+  }
 }
 
-body {
-  font-family: ProximaNova, sans-serif;
-}
-
-.h1, .h2, .h3, .h4 {
-  font-family: ProximaNova-Bold, sans-serif;
+div.hidden.divider {
+  padding-bottom: 1em;
 }

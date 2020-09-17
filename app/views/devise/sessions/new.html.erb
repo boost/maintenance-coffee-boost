@@ -1,33 +1,31 @@
-<div class="grid-x grid-padding-y text-center">
-  <div class="cell">
+<div class="grid-x grid-padding-x grid-padding-y">
+  <div class="cell text-center">
     <%= image_tag 'logo.svg', class: 'logo' %>
-    <h1 class="h4">Caffeine at Boost</h1>
-  </div>
-</div>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form' } ) do |f| %>
-  <h2 class="h3">Log in</h2>
-  
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, placeholder: 'user@example.com', autocomplete: 'email' %>
+    <h1>Caffeine at Boost</h1>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder: 'password123', autocomplete: 'current-password' %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'cell small-10 small-offset-1 medium-6 medium-offset-3 large-4 large-offset-4' } ) do |f| %>
+    <h3>Log in</h3>
 
-  <% if devise_mapping.rememberable? %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, placeholder: 'user@example.com', autocomplete: 'email' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: 'password123', autocomplete: 'current-password' %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit 'Log in', class: 'button expanded' %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit 'Log in', class: 'button expanded' %>
-  </div>
-
-  <%= render "devise/shared/links" %>
-<% end %>
+</div>

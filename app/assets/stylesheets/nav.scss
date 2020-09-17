@@ -1,0 +1,15 @@
+@import 'variables';
+
+.top-bar {
+  .logo {
+    max-height: 38px;
+  }
+
+  &, ul {
+    background-color: $blue;
+  }
+
+  .menu li, .menu a {
+    color: $white;
+  }
+}

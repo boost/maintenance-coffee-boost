@@ -10,7 +10,26 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="page-<%= controller_name %>">
+  <body class="page <%= controller_name %>">
+
+    <% if signed_in? %>
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <ul class="menu">
+            <%= image_tag 'logo.svg', class: 'logo' %>
+            <li class="menu-text">Caffine at Boost</li>
+            <li><%= link_to 'New Order', new_order_path, class: 'button' %></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <% if controller_name != 'sessions' %>
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button' %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
 
     <div class="grid-container">
       <% if notice %>
@@ -24,12 +43,10 @@
         </div>
       <% end %>
 
-      <%- if controller_name != 'sessions' %>
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-      <% end %>
-
       <%= yield %>
     </div>
+
+    <div class="hidden divider">
 
   </body>
 </html>

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('ProximaNova-Regular.otf');
+}
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url('ProximaNova-Bold.otf');
+}
+
+body.page {
+  font-family: ProximaNova, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: ProximaNova-Bold, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  }
+}
+
+.button, button {
+  margin-bottom: 0rem;
+}

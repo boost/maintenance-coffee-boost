@@ -1,13 +1,11 @@
-.form {
-  padding: 24px;
-  margin: 0 auto;
-  background: white;
+@use 'variables';
+
+body.page form {
+  background: $white;
   color: black;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: $border-radius;
 
   .button {
-    background-color: #CD2D85;
-    border-radius: 3px;
+    background: $pink;
   }
 }
