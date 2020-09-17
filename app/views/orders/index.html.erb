@@ -1,0 +1,33 @@
+<div class="grid-x">
+  <div class="cell small-10 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1">
+    <h2>Coffee orders</h2>
+
+    <% if @orders.any? %>
+      <h3>Upcoming orders</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Order Name</th>
+            <th>Items</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <td><%= order.name %></td>
+              <td>
+                <% order.order_items.each do |order_item| %>
+                  <%= order_item.drink_name %> for <%= order_item.person_name %> </br>
+                <% end %>
+              </td>
+              <td></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+
+    <h3>Completed orders</h3>
+  </div>
+</div>

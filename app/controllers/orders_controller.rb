@@ -2,6 +2,14 @@ class OrdersController < ApplicationController
 
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+  # GET /orders
+  def index
+    @orders = Order
+      .includes(:order_items)
+      .all
+      .load
+  end
+
   # GET /orders/new
   def new
     @order = Order.new
