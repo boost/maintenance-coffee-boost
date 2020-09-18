@@ -2,13 +2,13 @@
 
 body.page {
   .h2, h2 {
-    color: $blue;
+    color: $jacarta;
 
     padding-top: 0.5em;
     padding-bottom: 0.5em;
   }
 
-  background-color: $grey;
+  background-color: $white-sand;
 }
 
 .button, button {
@@ -17,7 +17,11 @@ body.page {
   font-size: 1em;
 
   &.pink {
-    background: $pink;
+    background: $cerise;
+  }
+
+  &.red {
+    background: $stiletto;
   }
 }
 
