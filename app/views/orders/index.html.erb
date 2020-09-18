@@ -7,7 +7,7 @@
       <table>
         <thead>
           <tr>
-            <th>Order Name</th>
+            <th>Order/Client Name</th>
             <th>Items</th>
             <th>Action</th>
           </tr>
@@ -15,7 +15,7 @@
         <tbody>
           <% @orders.each do |order| %>
             <tr>
-              <td><%= order.name %></td>
+              <td><%= link_to order.name, edit_order_path(order) %></td>
               <td>
                 <% order.order_items.each do |order_item| %>
                   <%= order_item.drink_name %> for <%= order_item.person_name %> </br>

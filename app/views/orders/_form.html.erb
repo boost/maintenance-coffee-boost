@@ -1,1 +1,46 @@
+<%= form_with(model: order, local: true, class: 'cell small-10 small-offset-1 medium-6 medium-offset-3 large-6 large-offset-3') do |f| %>
 
+  <% if order.persisted? %>
+    <h2>Edit Order - <%= order.name %></h2>
+  <% else %>
+    <h2>New Order</h2>
+  <% end %>
+
+  <% if order.errors.any? %>
+    <div class="callout alert">
+      <h4><%= "Error".pluralize(order.errors.count) %>:</h4>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.fields_for :order_items do |ff| %>
+    <h3>Drink #<%= ff.index+1 %></h3>
+
+    <%= ff.label :person_name %>
+    <%= ff.text_field :person_name %>
+    <%= ff.label :drink_name %>
+    <%= ff.text_field :drink_name %>
+
+    <% if ff.object.persisted? %>
+      <%= ff.hidden_field :id %>
+
+      <%= ff.check_box :_destroy %>
+      <%= ff.label :_destroy %>
+    <% end %>
+
+    <hr />
+  <% end %>
+
+  <%= f.submit 'Submit order', class: 'button expanded' %>
+
+<% end %>

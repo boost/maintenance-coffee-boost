@@ -1,8 +1,8 @@
-@use 'variables';
+@import 'variables';
 
 body.page table {
   thead {
-    background-color: white;
+    background-color: $white;
 
     th {
       padding: 1.5em;
@@ -10,7 +10,7 @@ body.page table {
   }
 
   tbody {
-    background-color: white;
+    background-color: $white;
 
     td, th {
       padding: 1.5em;

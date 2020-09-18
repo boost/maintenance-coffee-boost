@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [:index, :new, :create]
+  resources :orders, except: [:show]
 end

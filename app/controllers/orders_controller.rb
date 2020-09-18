@@ -19,7 +19,6 @@ class OrdersController < ApplicationController
   end
 
   # POST /orders
-  # POST /orders.json
   def create
     @order = Order.new(order_params)
 
@@ -27,6 +26,19 @@ class OrdersController < ApplicationController
       redirect_to orders_path, notice: 'Order was successfully created.'
     else
       render :new
+    end
+  end
+
+  # GET /orders/:id
+  def edit
+  end
+
+  # POST /orders
+  def update
+    if @order.update(order_params)
+      redirect_to orders_path, notice: 'Order was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -38,6 +50,6 @@ class OrdersController < ApplicationController
     def order_params
       params
         .require(:order)
-        .permit(:name, order_items_attributes: [ :drink_name, :person_name ])
+        .permit(:name, order_items_attributes: [ :id, :drink_name, :person_name, :_destroy ])
     end
 end
