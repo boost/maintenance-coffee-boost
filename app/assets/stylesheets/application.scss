@@ -13,11 +13,13 @@
  */
 
 @import 'foundation.min';
-@import 'foundation_overrides';
 
-@import 'base';
-@import 'form';
-@import 'nav';
-@import 'table';
+@import 'variables/colors';
 
-@import 'sessions';
+@import 'blocks/base';
+@import 'blocks/form';
+@import 'blocks/nav';
+@import 'blocks/table';
+@import 'blocks/foundation_overrides';
+
+@import 'pages/sessions';
