@@ -2,6 +2,17 @@ body.page form {
   background: $white;
   color: black;
   border-radius: $border-radius;
+  padding: 2.5rem;
+
+  input[type=email], input[type=password] {
+    border-radius: $border-radius;
+    box-shadow: none;
+
+    &:focus, &:active {
+      box-shadow: none;
+      border: 0.21rem solid $curious-blue;
+    }
+  }
 
   .button {
     background: $cerise;
