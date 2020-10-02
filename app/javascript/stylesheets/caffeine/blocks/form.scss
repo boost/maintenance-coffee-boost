@@ -16,9 +16,11 @@ body.page form {
 
   input[type=checkbox] {
     margin-bottom: 0;
+    zoom: 1.7;
   }
 
   .button {
-    background: $cerise;
+    box-shadow: 0 2px darken($denim, 10%);
+    background-color: $denim;
   }
 }
