@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('./fonts/ProximaNova-Regular.otf');
+}
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url('./fonts/ProximaNova-Bold.otf');
+}
+
+@import 'variables/base';
+@import 'variables/colors';
+
+@import 'blocks/base';
+@import 'blocks/form';
+@import 'blocks/nav';
+@import 'blocks/table';
+
+@import 'pages/sessions';
