@@ -28,13 +28,14 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 end
 
 group :development, :test do
   gem 'boost-styles', git: 'https://github.com/boost/boost-styles.git', require: false
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
