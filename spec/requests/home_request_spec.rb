@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Home', type: :request do
-  let(:user) { User.create(email: 'user@example.com', password: 'password123') }
+  let(:user) { create(:user) }
 
   context 'when not logged in' do
     it 'renders the login page' do
