@@ -48,8 +48,12 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params
+      attributes = params
         .require(:order)
         .permit(:name, order_items_attributes: [ :id, :drink_name, :person_name, :_destroy ])
+
+      attributes['order_items_attributes'].reject! { |_, order_item| order_item['person_name'].blank? || order_item['drink_name'].blank? }
+
+      attributes
     end
 end

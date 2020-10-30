@@ -3,7 +3,6 @@
     <h2>Coffee orders</h2>
 
     <% if @orders.any? %>
-      <h3>Upcoming orders</h3>
       <table>
         <thead>
           <tr>
@@ -15,19 +14,19 @@
         <tbody>
           <% @orders.each do |order| %>
             <tr>
-              <td><%= link_to order.name, edit_order_path(order) %></td>
+              <td><%= order.name %></td>
               <td>
                 <% order.order_items.each do |order_item| %>
                   <%= order_item.drink_name %> for <%= order_item.person_name %> </br>
                 <% end %>
               </td>
-              <td></td>
+              <td>
+                <%= link_to 'Edit', edit_order_path(order) %>
+              </td>
             </tr>
           <% end %>
         </tbody>
       </table>
     <% end %>
-
-    <h3>Completed orders</h3>
   </div>
 </div>
