@@ -31,4 +31,15 @@ RSpec.feature 'Creating an order', type: :feature do
     expect(page.current_path).to eq '/orders'
     expect(page).to have_content "Meeting/Client name can't be blank"
   end
+
+  scenario 'user does not fill any order item details' do
+    # TODO! Intentionally failing
+    # We need to enforce that an Order includes at least one OrderItem.
+
+    fill_in('Meeting/Client name', with: 'Great meeting')
+    click_button('Submit order')
+
+    expect(page.current_path).to eq '/orders'
+    expect(page).to have_content 'Order must contain at least one item'
+  end
 end
