@@ -1,0 +1,7 @@
+<div class="grid-x grid-padding-x grid-padding-y">
+  <div class="cell">
+    <%= link_to '&larr; Back to Orders'.html_safe, orders_path, class: 'pink button' %>
+  </div>
+
+  <%= render 'form', order: @order %>
+</div>

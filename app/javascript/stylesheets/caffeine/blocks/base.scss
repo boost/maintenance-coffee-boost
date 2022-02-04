@@ -1,0 +1,28 @@
+body.page {
+  .h2, h2 {
+    color: $jacarta;
+
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  background-color: $white-sand;
+}
+
+.button, button {
+  border-radius: $border-radius;
+  margin-bottom: 0rem; // Reset
+  font-size: 1em;
+
+  &.pink {
+    background: $cerise;
+  }
+
+  &.red {
+    background: $stiletto;
+  }
+}
+
+div.hidden.divider {
+  padding-bottom: 1em;
+}

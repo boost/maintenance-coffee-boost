@@ -1,0 +1,17 @@
+body.page table {
+  thead {
+    background-color: $white;
+
+    th {
+      padding: 1.5em;
+    }
+  }
+
+  tbody {
+    background-color: $white;
+
+    td, th {
+      padding: 1.5em;
+    }
+  }
+}
